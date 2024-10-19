@@ -1,26 +1,32 @@
 .Tab {
   display: flex;
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   height: 1.3rem;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
 
   &__label {
-    background-color: #666666;
+    background-color: transparent;
     padding-right: 0.1rem;
     padding-left: 0.1rem;
     border-top-left-radius: 0.2rem;
     border-top-right-radius: 0.2rem;
-    color: white;
+    color: black;
+
+    &:hover {
+      background-color: rgb(186, 39, 39);
+      color: white;
+    }
   }
 
   &__left {
     border-top: 1.3rem solid transparent;
-    border-right: 0.4rem solid #666666;
+    border-right: 1.4rem solid transparent;
   }
 
   &__right {
     border-top: 1.3rem solid transparent;
-    border-left: 0.4rem solid #666666;
+    border-left: 1.4rem transparent;
   }
 }

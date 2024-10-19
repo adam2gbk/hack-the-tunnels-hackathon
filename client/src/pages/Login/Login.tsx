@@ -26,7 +26,7 @@ function Login() {
             <div>Welcome to the Carleton SSO Federated Portal.</div>
             <div>
               Enter your{" "}
-              <a href="https://myone.carleton.ca" target="blank">
+              <a href="https://youtu.be/cQx0f5eQz0M?si=vTJFryGE1sWTRR1X" target="blank">
                 MyCarletonOne
               </a>{" "}
               username and password.
@@ -44,6 +44,7 @@ function Login() {
           <button
             className="Login__panel__button"
             onClick={() => attemptLogin()}
+            
           >
             Sign In
           </button>
