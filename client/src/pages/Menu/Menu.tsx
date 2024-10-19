@@ -4,6 +4,16 @@ import "./Menu.style.scss";
 import { Link } from "react-router-dom";
 
 function Menu() {
+  const movingDiv = document.querySelectorAll<HTMLElement>('.moving-div')
+  for (let i = 0 ; i < movingDiv.length; i++) {
+    movingDiv[i].addEventListener('mouseenter', () => {
+      const xOffset = Math.random() * 100; // Random x offset between -50 and 50
+      const yOffset = Math.random() * 100; // Random y offset between -50 and 50
+      movingDiv[0].style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+    });
+  }
+  
+
   return (
     <Layout title={"Main Menu"}>
       <br />
@@ -83,7 +93,9 @@ function Menu() {
             </Link>
             ,<Link to="/404">Calculate Amount To Pay</Link>,
             <Link to="/404">International Currency Payment </Link>,
-            <Link to="/404">Refund Request</Link>,
+            <div className="moving-div" tabIndex={0}>
+              <Link to="/404" className="moving-div">Refund Request</Link>,
+            </div>
             <Link to="/404">Print tax receipts (T2202, RL-8)</Link>,
           </span>,
         ]}
