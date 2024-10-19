@@ -7,8 +7,8 @@ function Menu() {
   const movingDiv = document.querySelectorAll<HTMLElement>('.moving-div')
   for (let i = 0 ; i < movingDiv.length; i++) {
     movingDiv[i].addEventListener('mouseenter', () => {
-      const xOffset = Math.random() * 100; // Random x offset between -50 and 50
-      const yOffset = Math.random() * 100; // Random y offset between -50 and 50
+      const xOffset = Math.random() * 100 - 50; // Random x offset between -50 and 50
+      const yOffset = Math.random() * 100 - 50; // Random y offset between -50 and 50
       movingDiv[0].style.transform = `translate(${xOffset}px, ${yOffset}px)`;
     });
   }
@@ -94,7 +94,7 @@ function Menu() {
             ,<Link to="/404">Calculate Amount To Pay</Link>,
             <Link to="/404">International Currency Payment </Link>,
             <div className="moving-div" tabIndex={0}>
-              <Link to="/404" className="moving-div">Refund Request</Link>,
+              <Link to="/404">Refund Request</Link>,
             </div>
             <Link to="/404">Print tax receipts (T2202, RL-8)</Link>,
           </span>,
