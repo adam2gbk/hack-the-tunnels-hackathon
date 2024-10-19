@@ -2,17 +2,27 @@ import { Central as Layout } from "@/layouts";
 import { CabinetSection } from "./CabinetSection";
 import "./Menu.style.scss";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 function Menu() {
-  const movingDiv = document.querySelectorAll<HTMLElement>('.moving-div')
-  for (let i = 0 ; i < movingDiv.length; i++) {
-    movingDiv[i].addEventListener('mouseenter', () => {
-      const xOffset = Math.random() * 100 - 50; // Random x offset between -50 and 50
-      const yOffset = Math.random() * 100 - 50; // Random y offset between -50 and 50
-      movingDiv[0].style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-    });
-  }
-  
+  const movingDivRef = useRef(null);
+
+  useEffect(() => {
+    const movingDiv = movingDivRef.current;
+
+    const handleMouseEnter = () => {
+      const xOffset = Math.random() * 300 - 50; // Random x offset between -50 and 250
+      const yOffset = Math.random() * 300 - 50; // Random y offset between -50 and 250
+      movingDiv.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+    };
+
+    if (movingDiv) {
+      movingDiv.addEventListener('mouseenter', handleMouseEnter);
+      return () => {
+        movingDiv.removeEventListener('mouseenter', handleMouseEnter);
+      };
+    }
+  }, []);
 
   return (
     <Layout title={"Main Menu"}>
@@ -93,7 +103,7 @@ function Menu() {
             </Link>
             ,<Link to="/404">Calculate Amount To Pay</Link>,
             <Link to="/404">International Currency Payment </Link>,
-            <div className="moving-div" tabIndex={0}>
+            <div className="moving-div" ref={movingDivRef} tabIndex={0}>
               <Link to="/404">Refund Request</Link>,
             </div>
             <Link to="/404">Print tax receipts (T2202, RL-8)</Link>,
