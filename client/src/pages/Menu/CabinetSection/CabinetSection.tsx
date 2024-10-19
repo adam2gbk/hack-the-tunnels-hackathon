@@ -9,7 +9,7 @@ interface CabinetSectionProps {
 function CabinetSection({ title, lineItems }: CabinetSectionProps) {
   return (
     <div className="caveman spongebob">
-      <img src="caveman spongebob.webp"></img>
+      <img src="caveman.png" width="400" height="200"></img>
       <div>
         <div>{title}</div>
         <ul>
