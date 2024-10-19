@@ -1,0 +1,14 @@
+{
+  "name": "hack-the-tunnels-hackathon",
+  "version": "1.0.0",
+  "description": "![Hack The Tunnels](https://i.imgur.com/1NCyXkn.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.3.3"
+  }
+}
