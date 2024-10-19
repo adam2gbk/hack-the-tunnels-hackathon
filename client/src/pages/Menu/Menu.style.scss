@@ -1,0 +1,29 @@
+/*
+
+<div style="color-scheme: light">
+</div>
+
+@media (prefers-color-scheme: dark) {
+    body {
+    background-color: black;
+    color: white;
+    }
+    }
+    
+
+    .theme-a {
+        background: #dca;
+        color: #731;
+        */
+body {
+    background: #231e1e;
+    height: 100%;
+    color: rgb(227, 227, 227);
+    // background-color: black
+  }
+@media (prefers-color-scheme: dark) {
+    .theme-a.adaptive {
+        background: #231e1e;
+        color: rgb(227, 227, 227);
+    }
+}
